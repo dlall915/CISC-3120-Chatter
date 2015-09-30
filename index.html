@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>More Chatting</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="http://www.sci.brooklyn.cuny.edu/~sdexter/style.css" />
+</head>
+
+<body>
+    <div id="container">
+        <h1>Project 2: More Chatting</h1>
+
+        <h2>Overview</h2>This project is an extension of the Chatter labs we've been playing with in class. Simply put, you're going to add a little bit more sophistication to the Chatter protocol (just a little), and you're going to give the client and server a nice Graphical User Interface. And for extra credit, you can think about adding a bit <em>more</em> sophistication to the Chatter protocol and its implementation.
+
+        <h2>Foundations</h2>
+        
+        Notice that there's <strong>no code</strong> in this repository! Once you've caught your breath, remember that you have plenty of code at your disposal: I gave you a sockets-based implementation of the Chatter protocol, and you are working on an RMI-based implementation. You can use <em>either</em> of those as the basis for this project; just copy that code into this project (and then commit; make sure the new files are added to the repository).
+        
+        <h2>Extending the Protocol</h2> Let's add something that slightly relaxes the rigid "taking turns" nature of the Chatter protocol (which isn't that natural, after all). This is not going to be a huge improvement, but it's something. The new rule is this: if the "current chatter" types a chat which ends in three periods ("..."), then instead of the other chatter getting their turn, the current chatter gets to type another chat. This can go on as long as the current chatter wants to keep talking (that is, bogart the mic); when the current chatter types something that doesn't end in three dots, then the other chatter gets their turn (or turns). Note that these three dots should have no spaces between or after them.
+        
+        <h2>Providing a User Interface</h2>
+        
+        <p>Once you have that working on the console, work on providing a GUI for both the client side and server side--ultimately you should be able to run both of these simultaneously. You have a lot of freedom here: you can choose to implement these as applets (in which case you can steal a lot of code from the applet lectures) or as applications (in which case you might want to steal some code from project 1, also).
+</p>        
+
+<p>This is not a complicated application, so neither should your interface be complicated. But before you begin, you should think about what elements the interface should include, and how they should be laid out. You might want to write the layout code first, before you "hook up" the actual protocol. You should also think about how to integrate the interface fully with the protocol. For example, how can you use the interface to indicate to the user whether it's their turn or not? </p>
+
+<p>Also, design your GUI code with this question in mind: what if someone wanted to use your interface for a different chat protocol, or an even-more-modified version of Chatter? Can you design your interface so that it doesn't directly require <strong>Chatter</strong> clients/servers? This is something of a challenge; feel free to bounce ideas off me.</p>
+
+<hr/>
+
+        <h2>Doing More</h2>
+        
+        
+        <p>If you've got all that working and you have time and your hands, start thinking about how you might further relax the Chatter protocol so that your users have a more "natural" chatting experience. What will need to change? What additional rules do you need? Can you remove any existing rules?</p>
+        
+        <p>Implement your revised protocol in new classes (call the protocol something like ChatterXtreme); if you designed your GUI well, you shouldn't need to do much to hook this new protocol into your GUI.
+                <hr />
+
+        <h2>Submission and Grading</h2>
+        
+        Because this project is arguably a bit simpler than project 1, I'm giving you a little less time. 
+
+        <p>This project is due 30 minutes before class on Class 19 (November 6 for Thursday evening; November 12 for M/W afternoon). At that time, I will clone your GitHub repository. No subsequent changes to your repository will be graded.</p>
+
+        <p></p>
+
+        <p>I will communicate with you about your project through GitHub&mdash;at minimum, I will add comments to your code and push the results back to you.</p>
+
+        <p>I will grade out of 100 points, allocated as follows:</p>
+
+        <ol>
+                        <li>
+                <p><b>20% Documentation</b>. Your project should include documentation in the doc folder. You will need to create almost all the documentation yourself, obviously. You don't need to document the Chatter protocol itself, but other classes and methods must be documented using javadoc. Use Eclipse's "Generate Javadocs..." function to generate the new documentation. Your <code>README.md</code> doesn't need to include any documentation about the project.</p>
+
+                <p>5 of the 20 points for this section will be for your "Works Cited" section. Any website, book, or similar resource from which you get useful guidance must be listed here, along with a brief description of what you got from it (a bit of code? an explanation? an answer to a question?). You do not need to list the Java API or either of the two books required/recommended for class. If you use no other resources, then your "Works Cited" section must simply contain the word <em>None</em>." This section should appear at the top of your README.md.</p>
+            </li>
+
+            <li><b>10% Style</b>. Your code should be properly formatted, with enough (but not too much) whitespace. Eclipse will do most of this for you; make sure you let it help you. Variable names, metohd names, etc, should all be "self-documenting" but not excessively long. <em>Generally</em>, you can use any style you like, as long as you're consistent. If you're not sure what style to use, follow the <a href="https://google-styleguide.googlecode.com/svn/trunk/javaguide.html">Google Style Guide</a>, except where Eclipse's automatic formatting contradicts these guidelines.</li>
+
+            <li><b>50% Correctness and Efficiency</b> . Does your code implement Chatter correctly? Does the user interface function well? Does it do so efficiently, without wasting computation?</li>
+
+            <li><b>15% Object-Oriented Design</b>. Are the relationships among your classes (and the way they interact with the Java library classes) logical, clear, and robust? Do they (for example) adhere to the IS-A and HAS-A rules?  Is your code otherwise well-designed, e.g. avoiding duplicate code?</li>
+            <li><b>5% User Interface Design</b> We may not talk about principles of good user interface design before you complete this project. Nonetheless, your interface should be intuitive and easy to use, and a small part of grade depends on this.</li>
+        </ol>
+
+<p>Note that there are no points for "Steady Work" on this project&mdash;I expect you have a sense of the value of starting early on these projects. The 10 points that were allocated to "Steady Work" have been reallocated to Design for this project.</p>
+
+        <p></p>
+
+        <p>You can earn up to 10 points extra credit by implementing extra behaviors. Any extra behaviors you provide should be listed briefly in the <code>README.md</code></p>
+
+        <p>As with Project 1, on this project, you are to work strictly <em>on your own</em>. Specifically, you may neither show your code to, nor look at the code of, anyone else taking 3120 this semester. You may consult online/textbook resources (subject to the "Documentation" requirements above). You may certainly consult with me. You may, if you like, discuss your design at a high level with other students ("Oh, I found the <code>java.foo.bar</code> package to be really helpful," or, "Sure, I can explain the geometry of a paint window to you.").    </div>
+</body>
+</html>
