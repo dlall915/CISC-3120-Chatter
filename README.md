@@ -1,6 +1,6 @@
-# README.md
+# CISC-3120-Chatter
 
-The long assignment description is [here](http://bc-cisc3120-f14.github.io/project2-chatter).
+Chat program created for my Software Design 1 class when we learned network programming.  Has a GUI and uses Sockets.
 
 ## Class and Method Summary
 **ChatAppletGUI class**
